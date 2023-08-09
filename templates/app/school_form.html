@@ -7,11 +7,14 @@
 </head>
 <body>
     <center>
-        <h1 style="color: blueviolet;">list of School Objects</h1>
+        <h1>create form page </h1>
+        <form method="POST">
+            {% csrf_token %}
 
-        {% for school in allSO %}
-            <a href="{{school.pk}}"><h1>{{school.Scname}}</h1></a>
-        {% endfor %}
+              {{form.as_p}}
+
+            <input type="submit" value="insert">
+        </form>
     </center>
 </body>
 </html>
