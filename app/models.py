@@ -10,7 +10,7 @@ class School(models.Model):
 
     def __str__(self) -> str:
         return self.Scname
-
+    # collect the data and send to url detail
     def get_absolute_url(self):
         return reverse('detail',kwargs={'pk':self.pk})
     

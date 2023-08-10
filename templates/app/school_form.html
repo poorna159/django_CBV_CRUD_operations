@@ -7,13 +7,26 @@
 </head>
 <body>
     <center>
+        {% if form.instance.pk %}
+        <h1>update form page </h1>
+        {% else %}
         <h1>create form page </h1>
+        {% endif %}
+        
         <form method="POST">
             {% csrf_token %}
 
               {{form.as_p}}
 
-            <input type="submit" value="insert">
+            {% if form.instance.pk %}
+
+            <input type="submit" value="update">
+
+            {% else %}
+
+            <input type="submit" value="create">
+
+            {% endif %}
         </form>
     </center>
 </body>
